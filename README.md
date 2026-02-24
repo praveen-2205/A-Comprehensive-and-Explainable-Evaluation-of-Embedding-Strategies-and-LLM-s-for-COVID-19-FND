@@ -146,7 +146,7 @@ Generated explanations are evaluated based on:
 
 ---
 
-## ⚠️ Important Insight
+## Important Insight
 
 - **LIME & SHAP** → Feature-based explainability (word-level importance)  
 - **LLM-based XAI** → Reasoning-based explainability (semantic understanding)  
@@ -157,7 +157,7 @@ While LLM explanations provide strong interpretability, they are:
 
 ---
 
-## 🔥 Key Contributions
+## Key Contributions
 
 - Use of **LLaMA 2 and Qwen LLMs** for reasoning-based fake news detection  
 - Integration of **LIME and SHAP** for feature-level interpretability  
