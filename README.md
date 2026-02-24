@@ -1,5 +1,3 @@
-# A-Comprehensive-and-Explainable-Evaluation-of-Embedding-Strategies-and-LLM-s-for-COVID-19-FND
-
 # This research paper has been submitted to conferences and is currently under review.
 
 ## A Comprehensive and Explainable Evaluation of Large Language Models for COVID-19 Fake News Detection
