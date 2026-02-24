@@ -1,89 +1,101 @@
 # This research paper has been submitted to conferences and is currently under review.
 
-## A Comprehensive and Explainable Evaluation of Large Language Models for COVID-19 Fake News Detection
+## Explainable Fake News Detection using Large Language Models (LLMs)
 
-This project presents an in-depth study on the use of Large Language Models (LLMs) for detecting COVID-19 fake news, with a strong emphasis on Explainable Artificial Intelligence (XAI) to understand and interpret model decisions.
+This project presents a comprehensive approach to fake news detection in the COVID-19 domain using **Large Language Models (LLMs)**, combined with **Explainable Artificial Intelligence (XAI)** techniques to ensure transparency and interpretability of model decisions.
 
-The research focuses on moving beyond traditional black-box classification systems by incorporating reasoning-driven models and explainability techniques to improve trust, transparency, and reliability in high-stakes domains like healthcare.
-
-## Overview
-
-Fake news in the healthcare domain can have serious real-world consequences, influencing public behavior and policy decisions. While modern LLMs demonstrate strong performance in understanding and analyzing textual data, their lack of transparency poses a challenge for real-world deployment.
-
-This work addresses that gap by combining:
-- The reasoning capabilities of Large Language Models  
-- The interpretability provided by Explainable AI techniques  
-
-The goal is not only to achieve high detection performance but also to understand *why* a model makes a particular prediction.
-
-## Large Language Models (LLMs)
-
-This research explores the use of lightweight and efficient Large Language Models for fake news detection. Unlike traditional models that rely on pattern recognition, LLMs perform **reasoning-based classification** by analyzing the overall narrative, context, and semantic consistency of the input text.
-
-Key aspects of LLM-based detection in this work include:
-
-- **Instruction-based classification:**  
-  Models are prompted to classify news as *Fake* or *Real* based on the given content.
-
-- **Context-aware reasoning:**  
-  Instead of focusing on individual words, LLMs evaluate the entire text to determine plausibility and coherence.
-
-- **Zero-shot capability:**  
-  LLMs can perform classification without task-specific training, making them adaptable to emerging misinformation.
-
-- **Semantic and narrative understanding:**  
-  The models detect subtle inconsistencies, misleading claims, and unrealistic narratives that are difficult for traditional systems to capture.
-
-This approach enables robust detection of complex and context-dependent fake news.
-
-## Explainable Artificial Intelligence (XAI)
-
-A major contribution of this work is the integration of explainability into LLM-based fake news detection.
-
-Since LLMs are inherently black-box models, traditional feature attribution methods are not directly applicable. Therefore, this research adopts **behavior-based explainability techniques**, focusing on how models generate reasoning.
-
-### Prompt-Based Rationale Generation
-
-The primary explainability method used in this work is **prompt-based rationale generation**, where the model is instructed to output both:
-- A classification label (Fake/Real)  
-- A corresponding explanation for its decision  
-
-This approach provides insights into:
-- The reasoning process followed by the model  
-- Key factors influencing the prediction  
-- How the model interprets semantic meaning and context  
-
-### Explanation Characteristics
-
-The generated explanations typically highlight:
-
-- **Narrative consistency:** Whether the story logically makes sense  
-- **Factual plausibility:** Alignment with known real-world information  
-- **Semantic coherence:** Consistency in claims and statements  
-- **Misinformation cues:** Indicators of exaggeration, ambiguity, or manipulation  
-
-### Interpretability vs Faithfulness
-
-While prompt-based explanations provide valuable insights, this work also acknowledges that:
-- These explanations reflect the model’s generated reasoning  
-- They may not always perfectly represent internal computations  
-
-Despite this limitation, they serve as an effective tool for understanding LLM behavior in practical scenarios.
-
-## Key Contributions
-
-- Application of Large Language Models for reasoning-based fake news detection  
-- Integration of explainable AI techniques specifically tailored for LLMs  
-- Detailed analysis of how LLMs interpret and evaluate misinformation  
-- Demonstration of improved transparency in model decision-making  
-- Focus on trust and reliability in healthcare-related AI systems  
-
-## Conclusion
-
-This work demonstrates that Large Language Models can effectively detect fake news by leveraging deep semantic understanding and reasoning capabilities. By incorporating explainability through prompt-based rationale generation, the study enhances transparency and builds trust in AI-driven systems.
-
-The research highlights the importance of combining performance with interpretability, especially in sensitive domains like healthcare, where understanding model decisions is as critical as accuracy.
+The primary objective is to move beyond black-box predictions and provide **reasoning-driven, explainable outputs** for high-stakes applications such as healthcare misinformation detection.
 
 ---
 
-📄 For complete details, refer to the full research paper included in this repository.
+## 🔹 Large Language Models (LLMs)
+
+This work leverages modern LLMs to perform **reasoning-based classification**, where the model evaluates the entire text context instead of relying on surface-level patterns.
+
+### Models Used
+
+- **LLaMA 2 (7B)**
+  - High-performance LLM with strong contextual understanding
+  - Capable of reasoning over long textual inputs
+  - Achieved the highest accuracy (~97.8%) in experiments
+
+- **Qwen 7B-Instruct**
+  - Instruction-tuned LLM designed for prompt-based tasks
+  - Effective in zero-shot classification scenarios
+  - Generates structured and interpretable outputs
+
+---
+
+### LLM Approach
+
+The models are used in a **zero-shot setting**, meaning:
+- No task-specific fine-tuning is performed
+- Models rely purely on **prompt-based reasoning**
+
+Each input is processed using:
+- **Instruction-based prompting**
+- **Context-aware reasoning**
+- **Narrative and semantic analysis**
+
+Instead of focusing on keywords, the models evaluate:
+- Logical consistency of the content  
+- Plausibility of claims  
+- Alignment with real-world knowledge  
+
+This enables detection of **subtle and context-dependent misinformation**.
+
+---
+
+## 🔹 Explainable Artificial Intelligence (XAI)
+
+A major contribution of this work is the integration of multiple XAI techniques to analyze and interpret model behavior across different paradigms.
+
+The approach combines:
+- **Feature-based explainability (LIME, SHAP)**
+- **Reasoning-based explainability (LLMs)**
+
+---
+
+## 🔹 XAI Methods Used
+
+### 1. LIME (Local Interpretable Model-agnostic Explanations)
+
+LIME is used to provide **local interpretability** for individual predictions.
+
+#### How it works:
+- The input text is perturbed (slightly modified)
+- The model's predictions on these variations are observed
+- Important words influencing the prediction are identified
+
+#### What it provides:
+- Word-level importance for a specific prediction  
+- Identification of tokens pushing classification toward *Fake* or *Real*  
+- Easy-to-understand local explanations  
+
+---
+
+### 2. SHAP (SHapley Additive exPlanations)
+
+SHAP is based on **game theory** and provides both **local and global interpretability**.
+
+#### How it works:
+- Each feature (word/token) is assigned a contribution score
+- Scores represent the impact of that feature on the final prediction
+
+#### What it provides:
+- Consistent feature attribution  
+- Global understanding of model behavior  
+- Positive/negative contribution of words  
+
+---
+
+### 3. Prompt-Based Rationale Generation (LLM-Based XAI)
+
+This is the **primary explainability technique for LLMs**.
+
+#### Approach:
+The model is prompted to generate:
+- A classification label (*Fake / Real*)  
+- A natural language explanation supporting its decision  
+
+#### Example Output:
